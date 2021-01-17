@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import LoginButton from "../components/login";
-import LogoutButton from "../components/logout";
+import Profile from "../components/profile";
 
 export default function Home() {
   return (
@@ -10,20 +10,19 @@ export default function Home() {
         <title>Cambios Flaites</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <LoginButton />
+      <Profile />
+
       <main className={styles.main}>
-        <h1 className={styles.title}>Bienvenido a Cambios Flaites</h1>
-
-        <p className={styles.description}>
-          Para empezar, lo primero que debes hacer es registrarte o loguearte{" "}
-          <LoginButton />
-          <LogoutButton />
-        </p>
-
-        <div className={styles.grid}>
-          <div className={styles.card}>Uno</div>
-          <div className={styles.card}>Dos</div>
-          <div className={styles.card}>Tres</div>
-          <div className={styles.card}>Cuatro</div>
+        <div>
+          <label htmlFor="email">
+            Email:
+            <input id="email" type="email" name="user[email]" />
+          </label>
+          <label htmlFor="password">
+            Contraseña:
+            <input id="password" type="password" name="user[password]" />
+          </label>
         </div>
       </main>
 
